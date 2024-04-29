@@ -1,18 +1,12 @@
 ### Project CRUD Data Student using PostgreSQL
 ### Table of Contents
 
-- [](#)
-    - [ Postman Test Video :](#-postman-test-video-)
-- [](#-1)
-    - [ Rest API Create Student :](#-rest-api-create-student-)
-- [](#-2)
-    - [ Rest API Get Student :](#-rest-api-get-student-)
-- [](#-3)
-    - [ Rest API Get All Students :](#-rest-api-get-all-students-)
-- [](#-4)
-    - [ Rest API Update Student :](#-rest-api-update-student-)
-- [](#-5)
-    - [ Rest API Delete Student :](#-rest-api-delete-student-)
+- [](#)[ Postman Test Video :](#-postman-test-video-)
+- [](#-1)[ Rest API Create Student :](#-rest-api-create-student-)
+- [](#-2)[ Rest API Get Student :](#-rest-api-get-student-)
+- [](#-3)[ Rest API Get All Students :](#-rest-api-get-all-students-)
+- [](#-4)[ Rest API Update Student :](#-rest-api-update-student-)
+- [](#-5)[ Rest API Delete Student :](#-rest-api-delete-student-)
 
 #
 ### <a name="test"></a> Postman Test Video :
