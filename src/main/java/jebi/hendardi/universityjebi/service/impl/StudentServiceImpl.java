@@ -15,10 +15,12 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class StudentServiceImpl implements StudentService {
     private StudentRepository studentRepository;
+
     @Override
     public StudentDto createStudent(StudentDto studentDto) {
-
         Student student = StudentMapper.mapToStudent(studentDto);
+        // Set department
+        student.setDepartment(studentDto.getDepartment());
         Student savedStudent = studentRepository.save(student);
         return StudentMapper.mapToStudentDto(savedStudent);
     }
@@ -26,8 +28,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public StudentDto getStudentById(Long studentID) {
         Student student = studentRepository.findById(studentID)
-                .orElseThrow(() ->
-                        new ResourceNotFoundException("Student is not exist with given id : " + studentID));
+                .orElseThrow(() -> new ResourceNotFoundException("Student is not exist with given id : " + studentID));
 
         return StudentMapper.mapToStudentDto(student);
     }
@@ -42,8 +43,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public StudentDto updateStudent(Long studentId, StudentDto updateStudent) {
         Student student = studentRepository.findById(studentId).orElseThrow(
-                () -> new ResourceNotFoundException("Student is not exists with given id : " + studentId)
-        );
+                () -> new ResourceNotFoundException("Student is not exists with given id : " + studentId));
 
         student.setFirstName(updateStudent.getFirstName());
         student.setLastName(updateStudent.getLastName());
@@ -58,8 +58,7 @@ public class StudentServiceImpl implements StudentService {
     public void deleteStudent(Long studentId) {
 
         Student student = studentRepository.findById(studentId).orElseThrow(
-                () -> new ResourceNotFoundException("Student is not exists with given id : " + studentId)
-        );
+                () -> new ResourceNotFoundException("Student is not exists with given id : " + studentId));
         studentRepository.deleteById(studentId);
     }
 }
