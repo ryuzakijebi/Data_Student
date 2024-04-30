@@ -61,4 +61,9 @@ public class StudentServiceImpl implements StudentService {
                 () -> new ResourceNotFoundException("Student is not exists with given id : " + studentId));
         studentRepository.deleteById(studentId);
     }
+
+    @Override
+    public void createStudents(List<StudentDto> studentDtos) {
+        studentDtos.forEach(studentDto -> createStudent(studentDto));
+    }
 }
